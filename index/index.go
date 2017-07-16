@@ -18,7 +18,7 @@ func init() {
 	}
 }
 
-func HomepageHandler(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func HomepageHandler(w http.ResponseWriter, _ *http.Request, _ httprouter.Params) {
 	homepage.Execute(w, struct {
 		AllPosts	blog.Posts
 	}{

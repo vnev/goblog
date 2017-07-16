@@ -78,7 +78,7 @@ func (p Post) DateFormatted() string {
 	return p.Date.Format("02/01/06")
 }
 
-func IndexHandler(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func IndexHandler(w http.ResponseWriter, _ *http.Request, _ httprouter.Params) {
 	indexTemplate.Execute(w, struct {
 		AllPosts	Posts
 	}{
@@ -86,7 +86,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	})
 }
 
-func PostHandler(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func PostHandler(w http.ResponseWriter, _ *http.Request, p httprouter.Params) {
 	id := p.ByName("id")
 	entry, cool := postIndex[id]
 
