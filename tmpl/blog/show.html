@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ $.Post.Title }}</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        code {
+            font-family: "Inconsolata", monospace;
+            display: block;
+            background: #E0E0E0;
+            border-left: 2px solid #000;
+            padding: 20px;
+            white-space: pre;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -o-pre-wrap;
+        }
+
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                width: 750px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                width: 970px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                width: 1170px;
+            }
+        }
+
+        .breadcrumb {
+            border-bottom: 2px solid #BDBDBD;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <p>
+                <a href="/">Home</a> >
+                <a href="/blog">Blog</a> >
+                <a href="/blog/{{ $.Post.Id }}">{{ $.Post.Title }}</a>
+            </p>
+        </div>
+        {{ $.Post.Body }}
+    </div>
+</body>
+</html>
